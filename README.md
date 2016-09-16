@@ -1,0 +1,3 @@
+把html里imgUrlPrefix改成相应的图片前缀
+图片生成需要跨域的话需设置“Access-Control-Allow-Origin”
+没有加微信分享

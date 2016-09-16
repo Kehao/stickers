@@ -1,0 +1,571 @@
+@import './base.scss';
+@import './swiper.scss';
+@import "bourbon";
+$max-width: 10rem;
+body { max-width: $max-width;}
+html, body, section { width: 100%; height: 100%; position: relative; } 
+* { padding: 0; margin: 0; -webkit-tap-highlight-color: transparent; -webkit-appearance: none; }
+@mixin m-center($width) {
+    left: 50%;
+    margin-left: - $width/2;
+}
+@function px($px, $base-font-size: 75px) {
+    @return ( $px * 1px / $base-font-size) * 1rem;
+}
+.hint-box {
+    font-size: px(32)!important;
+    line-height: px(40)!important;
+}
+
+
+.hide { display: none; }
+.page1 {
+    z-index: 102;
+    @include position(absolute, px(0) null null px(0));
+    @include size(100%);
+    img:first-child {
+        @include size(px(750) px(1206));
+    }
+    .shoe1 {
+        @include size(px(189) px(145));
+        @include position(absolute, px(140) null null px(554));
+        background: url(../images/page1-shoe1.png) no-repeat;
+        background-size: contain;
+        @include animation(swing 2s infinite ease);
+    }
+    .shoe2 {
+        @include size(px(166) px(123));
+        @include position(absolute, px(520) null null px(384));
+        background: url(../images/page1-shoe2.png) no-repeat;
+        background-size: contain;
+    }
+    .shoe3 {
+        @include size(px(178) px(142));
+        @include position(absolute, px(858) null null px(84));
+        background: url(../images/page1-shoe3.png) no-repeat;
+        background-size: contain;
+        @include animation(swing 2s infinite ease);
+    }
+    .water {
+        @include size(px(131) px(72));
+        @include position(absolute, px(474) null null px(356));
+        background: url(../images/water.png) no-repeat;
+        background-size: cover;
+        animation: imageAnimation 2s steps(4) forwards infinite;
+    }
+    .eye {
+        @include size(px(78));
+        @include position(absolute, px(846) null null px(252));
+        background: url(../images/page1-eye.png) no-repeat;
+        background-size: cover;
+        animation: imageAnimation 2s steps(2) forwards infinite;
+    }
+    .arrow {
+        @include size(px(74) px(69));
+        @include position(absolute, px(1100) null null px(252));
+        @include m-center(px(74))
+        background: url(../images/page1-arrow.png) no-repeat;
+        background-size: contain;
+        @include animation(downArrow 2s infinite ease);
+    }
+
+
+}
+.page5 {
+    @include position(absolute, px(0) null null px(0));
+    @include size(100%);
+    img { 
+        width: 100%; 
+    }
+    .open {
+        display: block;
+        @include size(100% px(48));
+        @include position(absolute, px(984) null null 0);
+        text-align: center;
+        line-height: px(48);
+        font-size: px(32);
+        color: #c35c79;
+        text-decoration: underline;
+    }
+    .products {
+        position: relative;
+    }
+
+    .hide-first {
+        display: none;     
+    }
+    .first {
+        display: block;     
+    }
+    .select-color {
+        @include size(px(304) px(80));
+        @include position(absolute, px(868) null null px(245));
+    }
+    .color {
+        padding: 2px;
+        float: left;
+        margin-top: px(20);
+        margin-left: px(20);
+        @include size(px(53) px(35));
+        border-radius: 20%;
+    }
+    .color.selected {
+        padding: 0; 
+        border: 2px solid #fff;
+    }
+    .fed-swiper {
+        @include size(100% px(444));
+        text-align: center;
+        @include position(absolute, px(370) null null null);
+        .swiper-container {
+            display: inline-block; 
+            @include size(px(458) px(444));
+        }
+
+        img { @include size(px(458) px(444)); }
+    }
+    .go-shoe {
+        @include size(px(258) px(73));
+        @include position(absolute, px(905) null null px(257));
+    }
+}
+
+
+
+.page2 {
+    @include position(absolute, px(0) null null px(0));
+    @include size(100%);
+    img { 
+        width: 100%; 
+    }
+    .products {
+        position: relative;
+    }
+
+    .hide-first {
+        display: none;     
+    }
+    .first {
+        display: block;     
+    }
+
+    .fed-swiper {
+        @include size(100% px(444));
+        text-align: center;
+        @include position(absolute, px(370) null null null);
+        .swiper-container {
+            display: inline-block; 
+            @include size(px(458) px(444));
+        }
+
+        img { @include size(px(458) px(444)); }
+    }
+    .go-shoe {
+        @include size(px(258) px(73));
+        @include position(absolute, px(905) null null px(257));
+    }
+}
+
+.page3 {
+    @include size(px(750) px(1206));
+    background: url(../images/page3.jpg) no-repeat;
+    background-size: contain;
+    .stickers {
+        @include size(px(629) px(230));
+        @include position(absolute, px(746) null null px(62));
+        overflow: scroll;
+    }
+    .done {
+        display: block;
+        @include size(px(420) px(120));
+        @include position(absolute, px(1050) null null px(170));
+    }
+    .sticker {
+        float: left;
+        margin-bottom: px(20);
+        margin-right: px(25);
+        img { 
+            @include size(px(100)); 
+        }
+        padding: px(15);
+        background-color: #fad5e6;
+        border-radius: 35%;
+    }
+}
+
+.page4 {
+    display: none;
+    @include size(100%);    
+    background: url('../images/page4.jpg') no-repeat;     
+    background-size: contain;
+    #result {
+        @include position(absolute, px(195) null null px(75));
+        @include size(px(590) px(570));
+    }
+}
+
+.swiper-button-next  {
+        img {
+            float: right;
+            @include size(px(35) px(53));
+            margin-top: px(120);
+            margin-right: px(20);
+        }
+        top: px(480);
+        right: px(60);
+        @include size(px(120) px(280));
+        background: none;
+        @include animation(slideRight 1s ease-in infinite);
+    }
+    .swiper-button-prev  {
+        img {
+            @include size(px(35) px(53));
+            margin-top: px(120);
+            margin-left: px(20);
+        }
+        top: px(480);
+        left: px(60);
+        @include size(px(120) px(280));
+        background: none;
+        @include animation(slideLeft 1s ease-in infinite);
+    }
+
+.platform {
+    z-index: 101;
+    overflow: hidden;
+    @include position(absolute, px(158) null null px(74));
+    @include size(px(604) px(466));
+    .shoe-platform {
+        @include size(px(500) px(466));
+        text-align: center;
+    }
+    .shoe-color {
+        @include position(absolute, px(90) px(30) null null);
+        width: px(45);
+    }
+    .color {
+        float: left;
+        @include size(px(45));
+        border-radius: 50%;
+        border: 1px solid #000;
+        margin-bottom: px(37);
+    } 
+    .colorSelected {
+        border: 2px solid #000;     
+    }
+    .logo {
+        @include position(absolute, null px(10) px(10) null);
+        @include size(px(84) px(51));
+    }        
+    .theShoe {
+        display: inline-block;
+        img {
+            @include size(px(500) px(466));    
+        }
+        @include size(px(500) px(466));    
+    }
+}
+.fadeIn {
+    @include animation(fadeIn 1s ease-in forwards);
+}
+.slideUp {
+    @include animation(slideUp 1s ease-in forwards);
+}
+
+@include keyframes(fadeIn) {
+    0%  {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(slideUp) {
+    0%  {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0px, -100%, 0);
+        transform: translate3d(0px, -100%, 0);
+    }
+}
+@include keyframes(slideDown) {
+    0%  {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0px, 100%, 0);
+        transform: translate3d(0px, 100%, 0);
+    }
+}
+
+
+@include keyframes(slideLeft) {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+}
+
+@include keyframes(slideRight) {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@include keyframes (imageAnimation) {
+    100% {background-position: 100% 0;}
+}
+
+@include keyframes(downArrow) {
+  0% {
+    opacity: 0;
+    @include transform(translate3d(0, -30px, 0));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform(translate3d(0, 10px, 0));
+  }
+}
+
+.platform {
+    .sticker-control-del,    
+    .sticker-control-move,
+    .sticker-control-scale {
+        display: none;
+        position: absolute;
+        @include size(px(52));
+    }
+    .shoe-sticker {
+        padding: 2px;
+    }
+    .sticker-control-img {
+        @include size(100%);
+    }
+    .shoe-sticker.isActive {
+        // box-sizing:border-box;
+        // -moz-box-sizing:border-box; /* Firefox */
+        // -webkit-box-sizing:border-box; /* Safari */
+        border: 2px solid #fff;     
+        padding: 0;
+        .sticker-control-del,    
+        .sticker-control-move,
+        .sticker-control-scale {
+            display: block;
+        }
+    }
+    .sticker-control-del {
+        top: - px(52)/2;
+        left: - px(52)/2;
+        background: url('../images/platform/control_delete.png');     
+        background-size: contain;
+    }
+    .sticker-control-move {
+        top: - px(52)/2;
+        right: - px(52)/2;
+        background: url('../images/platform/control_move.png');     
+        background-size: contain;
+    }
+    .sticker-control-scale {
+        bottom: - px(52)/2;
+        right: - px(52)/2;
+        background: url('../images/platform/control_scale.png');     
+        background-size: contain;
+    }
+}
+
+.page2, .page5 {
+    .product-1 {
+        @include position(absolute, px(150) null null px(30));
+        @include size(px(230) px(280));
+            }
+    .product-1 {
+        @include position(absolute, px(150) null null px(30));
+        @include size(px(230) px(280));
+        
+    }
+    .product-2 {
+        @include position(absolute, px(315) null null px(251));
+        @include size(px(263) px(221));
+        
+    }
+    .product-3 {
+        @include position(absolute, px(160) null null px(548));
+        @include size(px(187) px(530));
+        
+    }
+    .product-4 {
+        @include position(absolute, px(585) null null px(45));
+        @include size(px(314) px(223));
+        
+    }
+    .product-5 {
+        @include position(absolute, px(753) null null px(402));
+        @include size(px(296) px(247));
+        
+    }
+    .product-6 {
+        @include position(absolute, px(870) null null px(27));
+        @include size(px(324) px(245));
+        
+    }
+    .product-7 {
+        @include position(absolute, px(1070) null null px(408));
+        @include size(px(310) px(264));
+        
+    }
+    .product-8 {
+        @include position(absolute, px(1153) null null px(42));
+        @include size(px(320) px(568));
+        
+    }
+    .product-9 {
+        @include position(absolute, px(1405) null null px(422));
+        @include size(px(278) px(334));
+        
+    }
+    .product-10 {
+        @include position(absolute, px(1763) null null px(36));
+        @include size(px(383) px(253));
+        
+    }
+    .product-11 {
+        @include position(absolute, px(2032) null null px(47));
+        @include size(px(315) px(188));
+        
+    }
+    .product-12 {
+        @include position(absolute, px(1780) null null px(482));
+        @include size(px(242) px(541));
+        
+    }
+    .product-13 {
+        @include position(absolute, px(2294) null null px(33));
+        @include size(px(333) px(178));
+        
+    }
+    .product-14 {
+        @include position(absolute, px(2371) null null px(405));
+        @include size(px(302) px(284));
+        
+    }
+    .product-15 {
+        @include position(absolute, px(2537) null null px(56));
+        @include size(px(340) px(237));
+        
+    }
+}
+.go {
+    display: block;
+    @include position(absolute, px(900) null null px(171));
+    @include size(px(421) px(113));
+}
+
+.result{
+    .open-tianmao,.share {
+        display: block;
+        @include size(px(344) px(122));
+        @include position(absolute, px(936) null null px(30));
+    }
+    .share {
+        left: px(380);
+    }
+    .pic {
+        @include size(px(500*1.1) px(466*1.1));
+        @include position(absolute, px(210) null null 0);
+        @include m-center(px(500*1.1));
+    }
+    position: relative;
+    @include size(100%);
+    background: url(../images/result.jpg) no-repeat;
+    background-size: contain;
+}
+.share-result {
+    position: relative;
+    @include size(100%);
+    background: url(../images/share.jpg) no-repeat;
+    background-size: contain;
+    .pic {
+        @include size(px(500*1.1) px(466*1.1));
+        @include position(absolute, px(210) null null 0);
+        @include m-center(px(500*1.1));
+    }
+    a {
+        display: block;
+        @include size(px(450) px(128));
+        @include position(absolute, px(924) null null px(152));
+        
+    }
+
+}
+
+
